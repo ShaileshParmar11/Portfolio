@@ -1,0 +1,151 @@
+{
+  "main": {
+    "name": "Shailesh Parmar",
+    "occupation": "Front End Web Developer",
+    "description": "Front End Freelancer by Day, MERN Stack Learner by Night. #MERN Stack",
+    "image": "shailesh-parmar.jpg",
+    "bio": "Hey, There 👋 My name is Shailesh Parmar and I am Front-End Web Developer who always deal's with BEAUTIFUL layouts, eye catching design's and not so beautiful Code 😜, Apart from Front-End I am focusing on Back-End too. and sooner will get a super power of Full-Stack mainly MERN Stack. ",
+    "contactmessage": "Get in touch with me to receive further details, get coached or anything else.",
+    "email": "shailesh.parmar.webdev@gmail.com",
+    "phone": "+91 8898222592",
+    "address": {
+      "street": "Dahisar East",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "zip": "4000068"
+    },
+    "website": "https://gitconnected.com/ShaileshParmar-WebDeveloper",
+    "resumedownload": "https://gitconnected.com/shaileshparmar-webdeveloper/resume",
+    "social": [
+      {
+        "name": "stackoverflow",
+        "url": "https://stackoverflow.com/users/14325494/shailesh-parmar",
+        "className": "fa fa-stack-overflow"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/shailesh-parmar-2525091b8/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "instagram",
+        "url": "https://www.instagram.com/shailesh_parmar02/",
+        "className": "fa fa-instagram"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/ShaileshParmar-WebDeveloper",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "Here you can create a short write-up of your skills to show off to employers",
+    "education": [
+      {
+        "school": "Aptech Computer Education",
+        "degree": "Software Engineering",
+        "graduated": "January 2014",
+        "description": "Graduated with Distinction"
+      }
+    ],
+    "work": [
+      {
+        "company": "Priksi Web Developer",
+        "title": "Freelancer Web Developer",
+        "years": "April 2018 - Present",
+        "description": "Priksi Web Developer is the local Group which help's people with technical stuff's, here I help them to create Basic website for local business. I deal with Front-End Stuff's"
+      },
+      {
+        "company": "Tata Consultancy Services",
+        "title": "Senior Associate",
+        "years": "March 2015 - Present",
+        "description": "This is not relevant Experience from TCS, because I work here as Senior Associate in Banking Sector, but  I have learned lots of thing like engaging with team, helping others, giving training to other teammate as well as new Joiner and lot more stuffs."
+      }
+    ],
+    "skills": [
+      {
+        "name": "HTML5",
+        "level": "80%"
+      },
+      {
+        "name": "CSS",
+        "level": "80%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "80%"
+      },
+      {
+        "name": "ReactJs",
+        "level": "60%"
+      },
+      {
+        "name": "NodeJS",
+        "level": "45%"
+      },
+      {
+        "name": "ExpressJs",
+        "level": "50%"
+      },
+      {
+        "name": "MongoDB",
+        "level": "50%"
+      },
+      {
+        "name": "Firebase",
+        "level": "30%"
+      },
+      
+      
+      {
+        "name": "Git",
+        "level": "60%"
+      }
+      
+      
+     
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "WhatsApp Clone",
+        "category": "WhatsApp Clone built with ReactJS && Firebase",
+        "image": "whatsapp.png",
+        "url": "https://whatsapp-clone-1d364.web.app"
+      },
+      {
+        "title": "Amazon Clone",
+        "category": "Amazone Clone built with ReactJS, Firebase & Stripe Payment",
+        "image": "amazon-clone.png",
+        "url": "https://clone-980b8.web.app"
+      },
+      {
+        "title": "Spotify Clone",
+        "category": "Spotify Clone built with ReactJS",
+        "image": "spotify-clone.PNG",
+        "url": "https://spotify-clone-10e5f.web.app/"
+      },
+      
+      {
+        "title": "Netflix Clone",
+        "category": "Facebook Clone built with ReactJS",
+        "image": "netflix-clone.jpeg",
+        "url": "https://netflix-clone-b0000.web.app"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "One of the Greate Web Developer I have met, we had done one Freelancing Project togather and belive me he is best you can have in your team.  ",
+        "user": "Sumit Solanki"
+      },
+      {
+        "text": "That Shailesh Parmar must be one of the most brilliant developers I've ever met! It is amazing that nobody has hired him yet. Hey you, you should hire this guy, I am confident that he will be one of your best developers in no time!",
+        "user": "Jitendra Darji"
+      }
+    ]
+  }
+}
