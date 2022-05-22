@@ -1,21 +1,21 @@
 {
   "main": {
     "name": "Shailesh Parmar",
-    "occupation": "Front End Web Developer",
-    "description": "Front End Freelancer by Day, MERN Stack Learner by Night. #MERN Stack",
+    "occupation": "Software Engineer",
+    "description": "Passionate self-taught developer & a freelance software engineer",
     "image": "shailesh-parmar.jpg",
-    "bio": "Hey, There 👋 My name is Shailesh Parmar and I am Front-End Web Developer who always deal's with BEAUTIFUL layouts, eye catching design's and not so beautiful Code 😜, Apart from Front-End I am focusing on Back-End too. and sooner will get a super power of Full-Stack mainly MERN Stack. ",
+    "bio": "Hey, There 👋 My name is Shailesh Parmar, a passionate self-taught developer & a freelance software engineer from India. My passion for software lies in dreaming up ideas and making them come true with elegant interfaces. I take great care of the experience, architecture, and code quality of the things I build.",
     "contactmessage": "Get in touch with me to receive further details, get coached or anything else.",
     "email": "shailesh.parmar.webdev@gmail.com",
     "phone": "+91 8898222592",
     "address": {
-      "street": "Dahisar East",
+      "street": "Miraroad East",
       "city": "Mumbai",
       "state": "Maharashtra",
-      "zip": "4000068"
+      "zip": "401107"
     },
-    "website": "https://gitconnected.com/ShaileshParmar-WebDeveloper",
-    "resumedownload": "https://gitconnected.com/shaileshparmar-webdeveloper/resume",
+    "website": "https://www.linkedin.com/in/shailesh-parmar-2525091b8/",
+    "resumedownload": "https://www.linkedin.com/in/shailesh-parmar-2525091b8/",
     "social": [
       {
         "name": "stackoverflow",
@@ -34,7 +34,7 @@
       },
       {
         "name": "github",
-        "url": "https://github.com/ShaileshParmar-WebDeveloper",
+        "url": "https://github.com/ShaileshParmar11",
         "className": "fa fa-github"
       }
     ]
@@ -51,6 +51,18 @@
     ],
     "work": [
       {
+        "company": "Deuex Solutions Pvt Ltd",
+        "title": "Software Engineer",
+        "years": "March 2021 - Present",
+        "description": "In Deuex, I have contributed in number of projects. Primery skill I have used for contributions is React, JS, TS, Jest and Cypress"
+      },
+      {
+        "company": "Open Metadata",
+        "title": "Commiter",
+        "years": "Dec 2021 - Present",
+        "description": "Open Metadata is a Open source project related to data collaboration"
+      },
+      {
         "company": "Priksi Web Developer",
         "title": "Freelancer Web Developer",
         "years": "April 2018 - Present",
@@ -60,7 +72,7 @@
         "company": "Tata Consultancy Services",
         "title": "Senior Associate",
         "years": "March 2015 - Present",
-        "description": "This is not relevant Experience from TCS, because I work here as Senior Associate in Banking Sector, but  I have learned lots of thing like engaging with team, helping others, giving training to other teammate as well as new Joiner and lot more stuffs."
+        "description": "This is not relevant Experience from TCS, because I work here as Senior Associate in Banking Sector, but I have learned lots of thing like engaging with team, helping others, giving training to other teammate as well as new Joiner and lot more stuffs."
       }
     ],
     "skills": [
@@ -77,8 +89,12 @@
         "level": "80%"
       },
       {
-        "name": "ReactJs",
+        "name": "TypeScript",
         "level": "60%"
+      },
+      {
+        "name": "ReactJs",
+        "level": "80%"
       },
       {
         "name": "NodeJS",
@@ -93,18 +109,17 @@
         "level": "50%"
       },
       {
-        "name": "Firebase",
-        "level": "30%"
-      },
-      
-      
-      {
         "name": "Git",
+        "level": "70%"
+      },
+      {
+        "name": "Jest",
         "level": "60%"
+      },
+      {
+        "name": "Cypress",
+        "level": "20%"
       }
-      
-      
-     
     ]
   },
   "portfolio": {
@@ -127,7 +142,7 @@
         "image": "spotify-clone.PNG",
         "url": "https://spotify-clone-10e5f.web.app/"
       },
-      
+
       {
         "title": "Netflix Clone",
         "category": "Facebook Clone built with ReactJS",
