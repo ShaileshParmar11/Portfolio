@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { gotoStable } from './helpers';
 
 /**
@@ -144,7 +144,7 @@ test.describe('responsive layout', () => {
   });
 });
 
-async function columnCount(page: import('@playwright/test').Page, selector: string) {
+async function columnCount(page: Page, selector: string) {
   return page
     .locator(selector)
     .evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);

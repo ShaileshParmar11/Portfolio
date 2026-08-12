@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { gotoStable } from './helpers';
 
 /**
@@ -45,7 +45,7 @@ test.describe('reveal on scroll', () => {
   });
 });
 
-async function scrollThrough(page: import('@playwright/test').Page) {
+async function scrollThrough(page: Page) {
   await page.evaluate(async () => {
     const step = 400;
     for (let y = 0; y <= document.body.scrollHeight; y += step) {
