@@ -5,3 +5,10 @@
 [build.environment]
   # Vite 8 requires Node ^20.19.0 || >=22.12.0.
   NODE_VERSION = "22"
+
+# The kill switch for the old Create React App service worker must never be
+# served from cache, or a stale copy could keep the dead worker alive.
+[[headers]]
+  for = "/service-worker.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
