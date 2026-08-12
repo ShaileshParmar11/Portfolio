@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 
+// Order matches the page: About (01), Work (02), Skills (03), Contact (04),
+// so stepping through the nav always scrolls in one direction.
 const links = [
-  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
+  { label: 'Work', href: '#work' },
   { label: 'Skills', href: '#skills' },
   { label: 'Contact', href: '#contact' },
 ];
