@@ -1,3 +1,5 @@
+import { externalLinkProps } from '../utils/links';
+
 const socials = [
   { label: 'GitHub ↗', href: 'https://github.com/ShaileshParmar11' },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/shailesh-parmar-dev' },
@@ -35,7 +37,7 @@ export function Hero() {
         </div>
         <div className="socials">
           {socials.map((social) => (
-            <a key={social.href} href={social.href}>
+            <a key={social.href} href={social.href} {...externalLinkProps(social.href)}>
               {social.label}
             </a>
           ))}

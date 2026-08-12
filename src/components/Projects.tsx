@@ -1,6 +1,7 @@
 import { projects } from '../data/projects';
 import { useReveal } from '../hooks/useReveal';
 import type { Project } from '../types';
+import { externalLinkProps } from '../utils/links';
 
 function ProjectCard({ project }: { project: Project }) {
   const { ref, revealClass } = useReveal<HTMLDivElement>();
@@ -22,7 +23,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="card-links">
         {project.links.map((link) => (
-          <a key={link.href} href={link.href}>
+          <a key={link.href} href={link.href} {...externalLinkProps(link.href)}>
             {link.label}
           </a>
         ))}
