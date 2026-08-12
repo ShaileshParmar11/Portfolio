@@ -6,9 +6,18 @@ node_modules
 
 # testing
 /coverage
+test-results
+playwright-report
+blob-report
+
+# working design/plan docs — kept locally, not part of the repo
+docs/superpowers/
 
 # production
 /build
+dist
+dist-ssr
+*.local
 
 # misc
 .DS_Store
