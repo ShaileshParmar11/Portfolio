@@ -35,6 +35,17 @@ nav.scrolled{border-color:var(--line)}
 .nav-links .btn{color:var(--txt)}
 .menu-btn{display:none;background:none;border:none;color:var(--txt);font-size:24px;cursor:pointer}
 
+/* MOBILE MENU — panel is inert above the breakpoint, so desktop is unaffected */
+.nav-menu{display:none}
+@media(max-width:860px){
+  .nav-menu{display:block;overflow:hidden;max-height:0;transition:max-height .32s cubic-bezier(.2,.7,.2,1)}
+  .nav-menu.open{max-height:340px}
+  .nav-menu-in{display:flex;flex-direction:column;padding:4px 28px 20px;border-top:1px solid var(--line)}
+  .nav-menu a{font-family:var(--display);font-size:15px;font-weight:500;color:var(--muted);padding:14px 2px;border-bottom:1px solid var(--line);transition:color .2s}
+  .nav-menu a:hover,.nav-menu a:focus-visible{color:var(--txt)}
+  .nav-menu .btn{margin-top:16px;padding:11px 20px;color:var(--txt);text-align:center;border:1px solid var(--line);border-radius:100px}
+}
+
 /* HERO */
 header{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden}
 .blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;z-index:0;animation:float 14s ease-in-out infinite}
