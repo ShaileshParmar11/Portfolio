@@ -129,4 +129,7 @@ footer .socials{justify-content:center;margin-top:14px}
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important;transition-duration:.01ms !important}
   .reveal{opacity:1 !important;transform:none !important}
+  /* scroll-behavior is neither an animation nor a transition, so the rules
+     above don't cover it — anchor jumps would still animate without this. */
+  html{scroll-behavior:auto !important}
 }

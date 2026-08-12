@@ -22,7 +22,7 @@ Deployed to **Netlify** (see `netlify.toml`):
 
 ## Structure
 
-```
+```text
 index.html              # document head: meta/OpenGraph tags, fonts, favicon
 public/                 # og-image.png, Shailesh-Parmar-Resume.pdf
 src/
