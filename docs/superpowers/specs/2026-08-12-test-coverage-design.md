@@ -64,9 +64,12 @@ New scripts:
 Two decisions worth recording:
 
 - `tsconfig.app.json` gains an `exclude` for `src/**/*.test.ts`,
-  `src/**/*.test.tsx` and `src/test/**`, so `npm run build` does not
-  type-check tests. `tsconfig.test.json` covers them instead and is added to the
-  solution config's `references`.
+  `src/**/*.test.tsx` and `src/test/**`, so the *app* project stays free of
+  test-only types. `tsconfig.test.json` covers tests, e2e specs and the
+  Playwright config, and is added to the solution config's `references` — which
+  means `tsc -b`, and therefore `npm run build`, type-checks the tests too.
+  That is deliberate: a type error in a spec should fail CI, and editors resolve
+  test files through the reference.
 - Playwright's `webServer` runs `npm run build && npm run preview` on port 4173,
   so E2E exercises the exact production bundle Netlify serves, not the dev
   server. `reuseExistingServer` is enabled outside CI.
@@ -78,7 +81,7 @@ Two decisions worth recording:
 | `src/utils/links.test.ts` | `http`/`https` return `target="_blank"` and `rel="noopener noreferrer"`; `mailto:`, `#anchor` and `/file.pdf` return `{}`; uppercase `HTTPS://` still matches; protocol-relative `//host` returns `{}` (documents current behaviour) |
 | `src/data/projects.test.ts` | every field non-empty; exactly one entry has `featured: true`, since the full-width grid slot depends on it; every `links[].href` parses as an absolute URL; no duplicate titles, which are used as React keys |
 | `src/data/skills.test.ts` | no duplicate categories; no duplicate items within a category; both are React keys |
-| `src/hooks/useReveal.test.ts` | initial class is `reveal`; becomes `reveal in` when the observer reports intersection; observer disconnects after the first hit (one-shot); falls back to revealed when `IntersectionObserver` is undefined; disconnects on unmount |
+| `src/hooks/useReveal.test.tsx` | initial class is `reveal`; becomes `reveal in` when the observer reports intersection; stays hidden while reported non-intersecting; observer disconnects after the first hit (one-shot); falls back to revealed when `IntersectionObserver` is undefined; no observer is created when the ref is never attached; disconnects on unmount |
 | `src/components/Projects.test.tsx` | one card per data entry; chips match the data; the featured entry receives the `feature` class; project links carry `target` and `rel` |
 | `src/components/Skills.test.tsx` | one category block per entry; chips match the data |
 | `src/components/Marquee.test.tsx` | items render exactly twice; the first pass carries no `aria-hidden`; every span of the second pass is `aria-hidden`; accessible text names each technology once |
@@ -101,12 +104,19 @@ Projects: `desktop-chromium` at 1280×900 and `mobile-chromium` at 393×852.
 | `e2e/mobile-menu.spec.ts` | at 393px the desktop links are hidden and ☰ is shown; toggling sets `aria-expanded` and swaps the icon; the panel is not clipped by its `max-height`; clicking a link both closes the panel and navigates; Escape closes it and restores focus; growing past 860px closes it |
 | `e2e/links.spec.ts` | every `http(s)` anchor has `target="_blank"` and `rel="noopener noreferrer"`; anchors, `mailto:` and the résumé deliberately do not; `/Shailesh-Parmar-Resume.pdf` responds 200 `application/pdf`; `/og-image.png` responds 200 `image/png` |
 | `e2e/design-invariants.spec.ts` | `:root` tokens resolve to the original values (`--bg #08080c`, `--bg2 #0d0d14`, `--txt #f2f2f5`, `--muted #9a9aa7`, `--v #7c3aed`, `--p #ec4899`, `--c #06b6d4`); `.grad` carries the three-stop gradient with `background-clip: text`; at 859px the project, about and skills grids are single-column and the stats grid is two-column; at 861px the project grid is two-column, the about grid is `1.35fr 1fr`, the skills grid is three-column and the stats grid is four-column; the two marquee halves are equal width; sections appear in DOM order about, work, skills, contact and are numbered 01–04 |
-| `e2e/reduced-motion.spec.ts` | with `reducedMotion: 'reduce'`, `scroll-behavior` computes to `auto` and an anchor click lands immediately rather than animating; `.reveal` elements are visible without scrolling |
+| `e2e/reduced-motion.spec.ts` | with `contextOptions: { reducedMotion: 'reduce' }`, `scroll-behavior` computes to `auto` and an anchor click lands immediately rather than animating; `.reveal` elements are visible without scrolling; the blob, dot and marquee animations are stopped |
 | `e2e/meta.spec.ts` | raw HTML fetched via `request.get('/')` — no JavaScript executed, i.e. exactly a crawler's view — contains the title, description, all OpenGraph and Twitter tags, and the gradient favicon data URI |
 
 `e2e/meta.spec.ts` is the one that encodes *why* Netlify's legacy prerendering
 can be switched off: it proves the social and SEO metadata is present before any
 script runs.
+
+Every spec navigates through `gotoStable()` in `e2e/helpers.ts`, which awaits
+`document.fonts.ready` after `page.goto`. This is not incidental: Space Grotesk
+and Inter load asynchronously, and swapping them in from the fallback face
+reflows the page. Measuring an element offset before that lands produced a real
+intermittent failure — roughly one run in four, off by 22px — so any assertion
+about position, height or column width must wait for fonts.
 
 One trap to avoid when implementing the token assertions: `--card` and `--line`
 are deliberately absent from the list. esbuild's CSS minifier rewrites

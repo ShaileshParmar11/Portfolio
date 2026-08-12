@@ -13,6 +13,31 @@ npm run build    # type-check + production build -> dist/
 npm run preview  # serve the production build locally
 ```
 
+## Testing
+
+```bash
+npm test           # unit + component tests (Vitest, jsdom)
+npm run test:watch # same, in watch mode
+npm run test:coverage
+npm run test:e2e   # Playwright, against a production build
+```
+
+Two layers, split by what each can honestly verify:
+
+- **Vitest + Testing Library** covers pure logic, data integrity and component
+  render output.
+- **Playwright** covers everything needing a real browser — reveal-on-scroll,
+  the sticky-nav border, the mobile menu, breakpoints, `prefers-reduced-motion`
+  and crawler-visible metadata.
+
+The split is deliberate: jsdom implements neither `IntersectionObserver` nor
+layout, so a jsdom-only suite would report green while reveal-on-scroll and
+smooth anchor scrolling were broken. `playwright.config.ts` builds the site and
+serves `dist/`, so E2E runs against the same bundle Netlify deploys.
+
+CI runs lint, type-check, build, both suites and uploads the Playwright report
+on failure. See [the design spec](docs/superpowers/specs/2026-08-12-test-coverage-design.md).
+
 ## Deployment
 
 Deployed to **Netlify** (see `netlify.toml`):
