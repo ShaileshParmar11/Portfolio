@@ -10,6 +10,9 @@ test-results
 playwright-report
 blob-report
 
+# working design/plan docs — kept locally, not part of the repo
+docs/superpowers/
+
 # production
 /build
 dist

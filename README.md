@@ -36,7 +36,7 @@ smooth anchor scrolling were broken. `playwright.config.ts` builds the site and
 serves `dist/`, so E2E runs against the same bundle Netlify deploys.
 
 CI runs lint, type-check, build, both suites and uploads the Playwright report
-on failure. See [the design spec](docs/superpowers/specs/2026-08-12-test-coverage-design.md).
+on failure.
 
 ## Deployment
 
