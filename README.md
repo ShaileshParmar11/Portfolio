@@ -78,19 +78,3 @@ and `tsconfig.{app,node,test}.json` behind the solution `tsconfig.json`.
 To update content, edit the typed arrays in `src/data/` — the cards and chips are
 rendered from them, and `src/data/*.test.ts` guards against blank fields and
 duplicate React keys.
-
-## Legacy
-
-The site was previously a Create React App project. That code was removed in
-this rebuild and lives on in git history — commit `680689c` is the last one
-with the CRA app intact at its original paths:
-
-```bash
-git show 680689c:package.json      # inspect a single file
-git checkout 680689c -- src public # restore into the working tree
-```
-
-## Credits
-
-Original CRA template by [Tim Baker](https://github.com/tbakerx/react-resume-template),
-based on the [Ceevee template by Styleshout](https://www.styleshout.com/free-templates/ceevee/).
