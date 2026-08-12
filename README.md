@@ -1,40 +1,49 @@
-# React Portfolio
+# Shailesh Parmar — Portfolio
 
-![ReactJS Resume Website Template](resume-screenshot.png?raw=true "ReactJS Resume Website Template")
+Personal portfolio site built with **Vite + React + TypeScript**.
 
-## <a href="https://shailesh-parmar.netlify.app/">LIVE DEMO</a>
+**Live:** <https://shailesh-parmar.netlify.app/>
 
-## Description
+## Development
 
-You can use this templete to create your portfolio.
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # type-check + production build -> dist/
+npm run preview  # serve the production build locally
+```
 
-## Make it Your Own!
+## Deployment
 
-#### PREREQUISITES:
+Deployed to **Netlify** (see `netlify.toml`):
 
-- Sign up for a Netlify account <a href='https://www.netlify.com'>HERE</a>
-- Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
+- Build command: `npm run build`
+- Publish directory: `dist`
 
-#### PROCEDURE:
+## Structure
 
-- Download the zip folder from Github and unzip it
-- Open the folder in VS Code
-- Edit <code>public/resumeData.json</code> and add your personal details and projects
-- Open terminal in VS Code
-- RUN <code>npm init</code> , this command can be used to set up a new or existing npm package
-- RUN <code>npm install</code> , this command pulls out all the require node modules
-- RUN <code>npm run build</code>, this command will create a build folder for you
-- DRAG AND DROP the BUILD folder on Netlify, your app is live now for the world to see
+```
+index.html              # document head: meta/OpenGraph tags, fonts, favicon
+public/                 # og-image.png, Shailesh-Parmar-Resume.pdf
+src/
+  main.tsx              # entry point, imports the global stylesheet
+  App.tsx               # composes the page sections
+  components/           # Nav, Hero, Stats, Marquee, About, Projects, Skills, Contact, Footer
+  data/                 # typed projects + skills arrays
+  hooks/useReveal.ts    # IntersectionObserver reveal-on-scroll
+  styles/global.css     # all styles (design tokens in :root)
+  types.ts              # Project and Skill interfaces
+```
+
+To update content, edit the typed arrays in `src/data/` — the cards and chips are
+rendered from them.
+
+## Legacy
+
+The previous Create React App site is archived in [`legacy-react/`](legacy-react/)
+and is no longer built or deployed.
 
 ## Credits
 
-#### All Credits Goes to Tim Baker <a href='https://github.com/tbakerx/react-resume-template'>Original Repo</a>
-
-HTML Design Template
-<a href="https://www.styleshout.com/free-templates/ceevee/">Ceevee Template by Styleshout</a>
-
-Header photo credit
-<a href="https://unsplash.com/@mischievous_penguins?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">Casey Horner</a>
-
-Testimonial photo credit
-<a href="https://unsplash.com/@samuelzeller?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">Samuel Zeller</a>
+Original CRA template by [Tim Baker](https://github.com/tbakerx/react-resume-template),
+based on the [Ceevee template by Styleshout](https://www.styleshout.com/free-templates/ceevee/).
