@@ -40,8 +40,14 @@ rendered from them.
 
 ## Legacy
 
-The previous Create React App site is archived in [`legacy-react/`](legacy-react/)
-and is no longer built or deployed.
+The site was previously a Create React App project. That code was removed in
+this rebuild and lives on in git history — commit `680689c` is the last one
+with the CRA app intact at its original paths:
+
+```bash
+git show 680689c:package.json      # inspect a single file
+git checkout 680689c -- src public # restore into the working tree
+```
 
 ## Credits
 
